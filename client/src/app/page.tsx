@@ -1,14 +1,7 @@
 "use client";
-import Container from "@/components/container";
-import { Home, Search, Bell, Mail, Bookmark, User, Hash, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Home, Search, Bell, Mail, Bookmark, User, Hash } from "lucide-react";
 
 export default function HomePage() {
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark);
-  }, [isDark]);
 
   return (
     <div className="grid grid-cols-12 min-h-screen bg-white dark:bg-black text-black dark:text-white">
@@ -16,12 +9,6 @@ export default function HomePage() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold">PeerSpace</h1>
-            <button 
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
           </div>
           <nav className="space-y-2">
             {[
